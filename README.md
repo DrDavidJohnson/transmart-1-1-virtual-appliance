@@ -1,7 +1,6 @@
-transmart-1.1-vm
-================
-
-Project to store scripts and files to build the tranSMART 1.1 appliance on SUSE Studio.
+tranSMART 1.1 Virtual Appliance
+===============================
+Project to store helper scripts and files to build tranSMART 1.1 virtual appliances on SUSE Studio or KIWI.
 
 The configuration uses the openSUSE KIWI Image System (http://github.com/openSUSE/kiwi) to build packed VMs (or virtual appliances).
 
