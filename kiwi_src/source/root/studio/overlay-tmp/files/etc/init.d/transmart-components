@@ -1,0 +1,27 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          transmart-components
+# Required-Start:    $local_fs $network
+# Required-Stop:
+# Default-Start:     2
+# Default-Stop:
+# Description:       Script to start tranSMART dependencies (RServer)
+# Short-Description: Start/stop tranSMART components
+### END INIT INFO
+
+start_components() {
+		sudo mkdir -p /var/log/rserve	
+        sudo /usr/lib64/R/bin/R --no-save CMD /usr/lib64/R/library/Rserve/libs//Rserve.so >> /var/log/rserve/rserve.log 2>&1
+}
+
+case $1 in
+        start)
+                echo "Starting tranSMART components ..."
+                start_components
+                exit 0
+        ;;
+        *)
+                echo "Usage: /etc/init.d/transmart-components {start}"
+                exit 1
+        ;;
+esac

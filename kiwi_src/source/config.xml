@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<image name='tranSMART_1.1_server' displayname='tranSMART_1.1_server' schemaversion='5.2'>
+  <description type='system'>
+    <author>David Johnson</author>
+    <contact>studio-devel@suse.de</contact>
+    <specification>A text-only base</specification>
+  </description>
+  <preferences>
+    <type checkprebuilt='true' boot='vmxboot/suse-12.3' fsnocheck='true' filesystem='ext3' bootloader='grub2' primary='true' format='vmdk' kernelcmdline='quiet' image='vmx'>
+      <machine memory='2048' arch='x86_64' guestOS='suse-64'>
+        <vmdisk controller='scsi' id='0'/>
+        <vmdvd controller='ide' id='0'/>
+        <vmnic driver='e1000' interface='0' mode='bridged'/>
+      </machine>
+      <size unit='M' additive='false'>16384</size>
+    </type>
+    <version>0.1.13</version>
+    <packagemanager>zypper</packagemanager>
+    <rpm-check-signatures>false</rpm-check-signatures>
+    <rpm-force>false</rpm-force>
+    <boot-theme>studio</boot-theme>
+    <timezone>UTC</timezone>
+    <hwclock>localtime</hwclock>
+    <locale>en_US</locale>
+  </preferences>
+  <users group='root'>
+    <user name='root' pwd='$1$450Dh7za$TIOAw3f754Zto/02i97pt1' home='/root' shell='/bin/bash'/>
+  </users>
+  <packages type='image' patternType='onlyRequired'>
+    <opensusePattern name='base'/>
+    <package name='apache2'/>
+    <package name='gcc-c++'/>
+    <package name='libXt-devel'/>
+    <package name='gcc-fortran'/>
+    <package name='cairo-devel'/>
+    <package name='R-base-devel'/>
+    <package name='gcc'/>
+    <package name='make'/>
+    <package name='ca-certificates-cacert'/>
+    <package name='sudo'/>
+    <package name='java-1_7_0-openjdk'/>
+    <package name='java-1_7_0-openjdk-devel'/>
+    <package name='nano'/>
+    <package name='unzip'/>
+    <package name='postgresql-server'/>
+    <package name='libcairo2'/>
+    <package name='R-base'/>
+    <package name='postgresql'/>
+    <package name='tomcat'/>
+    <package name='SuSEfirewall2'/>
+    <package name='grub2'/>
+    <package name='glibc-locale'/>
+    <package name='iputils'/>
+    <package name='kernel-default'/>
+    <package name='less'/>
+    <package name='plymouth'/>
+    <package name='syslog-ng'/>
+    <package name='vim'/>
+    <package name='yast2'/>
+    <package name='yast2-firstboot'/>
+    <package name='zypper'/>
+    <package name='open-vm-tools'/>
+    <archive name='plymouth.tar' bootinclude='true'/>
+  </packages>
+  <packages type='bootstrap'>
+    <package name='filesystem'/>
+    <package name='glibc-locale'/>
+    <package name='module-init-tools'/>
+  </packages>
+  <repository type='yast2'>
+    <source path='http://download.opensuse.org/distribution/12.3/repo/oss/'/>
+  </repository>
+  <repository type='rpm-md'>
+    <source path='http://download.opensuse.org/update/12.3/'/>
+  </repository>
+</image>
